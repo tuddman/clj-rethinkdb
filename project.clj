@@ -6,23 +6,23 @@
   :codox {:metadata {:doc/format :markdown}
           :source-uri "https://github.com/apa512/clj-rethinkdb/blob/master/{filepath}#L{line}"}
   :global-vars {*warn-on-reflection* true}
-  :plugins [[lein-codox "0.9.5"]
+  :plugins [[lein-codox "0.10.3"]
             [test2junit "1.1.2"]
-            [lein-cljsbuild "1.1.3"]
+            [lein-cljsbuild "1.1.7"]
             [lein-doo "0.1.7"]]
   :test2junit-output-dir ~(or (System/getenv "CIRCLE_TEST_REPORTS") "target/test2junit")
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.48" :scope "provided"]
-                 [org.clojure/core.async "0.2.374"]
-                 [org.clojure/tools.logging "0.3.1"]
-                 [aleph "0.4.1"]
-                 [gloss "0.2.5"]
-                 [cheshire "5.6.1"]
+  :dependencies [[org.clojure/clojure "1.9.0-alpha16"]
+                 [org.clojure/clojurescript "1.9.908" :scope "provided"]
+                 [org.clojure/core.async "0.3.443"]
+                 [org.clojure/tools.logging "0.4.0"]
+                 [aleph "0.4.3"]
+                 [gloss "0.2.6"]
+                 [cheshire "5.8.0"]
                  [rethinkdb-protobuf "2.3.0"]
-                 [com.google.protobuf/protobuf-java "3.0.0"]
-                 [clj-time "0.11.0"]]
+                 [com.google.protobuf/protobuf-java "3.4.0"]
+                 [clj-time "0.14.0"]]
   :profiles {:dev {:resource-paths ["test-resources"]
-                   :dependencies [[ch.qos.logback/logback-classic "1.1.7"]]}}
+                   :dependencies [[ch.qos.logback/logback-classic "1.2.3"]]}}
   :clean-targets ^{:protect false} [:target-path "out"]
   :cljsbuild {:builds [{:id "test"
                         :source-paths ["src" "test"]
